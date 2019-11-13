@@ -26,7 +26,7 @@ namespace TechJobs.Controllers
             {
                 List<Dictionary<string, string>> jobs = JobData.FindByValue(searchTerm);
                 ViewBag.title = "All " + searchTerm.First().ToString().ToUpper() + searchTerm.Substring(1) + " Jobs";
-                //ViewBag.searchType = searchType;
+                ViewBag.searchType = searchType;
                 ViewBag.jobs = jobs;
                 return View("Index");
             }
@@ -34,7 +34,7 @@ namespace TechJobs.Controllers
             {
                 List<Dictionary<string, string>> jobs = JobData.FindByColumnAndValue(searchType, searchTerm);
                 ViewBag.title = searchTerm.First().ToString().ToUpper() + searchTerm.Substring(1) + " " + ListController.columnChoices[searchType] + " Jobs";
-                //ViewBag.searchType = searchType;
+                ViewBag.searchType = searchType;
                 ViewBag.jobs = jobs;
                 return View("Index");
             }

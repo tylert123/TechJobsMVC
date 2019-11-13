@@ -12,7 +12,7 @@
         @foreach (KeyValuePair<string, string> kvp in job)
         {
             <tr>
-                <td>@kvp.Key: @kvp.Value</td>
+                <td>@kvp.Key.First().ToString().ToUpper()@kvp.Key.Substring(1): @kvp.Value</td>
             </tr>
         }
     </table>
